@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 "fortunes/riddles"
             )
 
-        val result = contents.split("%").filter { f -> f.trim().isNotEmpty() }.toMutableList()
+        val result = contents.split("%\n").toMutableList()
         result.shuffle()
         result.shuffle()
         return result.toTypedArray()
