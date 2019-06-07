@@ -54,15 +54,18 @@ class MainActivity : AppCompatActivity() {
     fun readFortunes(): Array<String> {
 
         var contents =
-            readAsset(assets.open("fortunes/fortunes")) + readAsset(assets.open("fortunes/literature")) + readAsset(
-                assets.open("fortunes/riddles")
+            readAsset("fortunes/fortunes") + readAsset("fortunes/literature") + readAsset(
+                "fortunes/riddles"
             )
 
-        return contents.split("%").toTypedArray()
+        val result = contents.split("%").toMutableList()
+        result.shuffle()
+        return result.toTypedArray()
+
     }
 
-    fun readAsset(inStream: InputStream): String {
-        return BufferedReader(InputStreamReader(inStream)).readText()
+    fun readAsset(relativeToAssetsPath: String): String {
+        return BufferedReader(InputStreamReader(assets.open(relativeToAssetsPath))).readText()
     }
 
 }
