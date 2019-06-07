@@ -56,8 +56,6 @@ class MainActivity : AppCompatActivity() {
 
         val result = contents.split("%\n").toMutableList()
         result.shuffle()
-        result.shuffle()
-        result.shuffle()
         return result.toTypedArray()
 
     }
