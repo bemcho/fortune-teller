@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         fortuneView = findViewById(R.id.fortune_text) as TextView
         fortunes = FortuneService(readFortunes())
+        tellFortune(fortuneView as View)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
