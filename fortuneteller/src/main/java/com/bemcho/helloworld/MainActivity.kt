@@ -7,10 +7,8 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.helloworld.R
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
-import java.io.InputStream
 import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity() {
@@ -58,7 +56,8 @@ class MainActivity : AppCompatActivity() {
                 "fortunes/riddles"
             )
 
-        val result = contents.split("%").toMutableList()
+        val result = contents.split("%").filter { f -> f.trim().isNotEmpty() }.toMutableList()
+        result.shuffle()
         result.shuffle()
         return result.toTypedArray()
 
