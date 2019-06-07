@@ -44,9 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     fun tellFortune(v: View) {
 
-        fortuneView?.setText(
-            fortunes?.getFortune() ?: "You're working under a slight handicap.  You happen to be human."
-        )
+        fortuneView?.text = fortunes?.getFortune() ?: "You're working under a slight handicap.  You happen to be human."
     }
 
     fun readFortunes(): Array<String> {
