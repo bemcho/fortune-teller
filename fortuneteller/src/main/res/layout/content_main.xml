@@ -17,6 +17,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:id="@+id/fortune_text" android:layout_marginLeft="16dp"
-            android:layout_marginRight="3dp"/>
+            android:layout_marginRight="3dp" android:textIsSelectable="true" android:nestedScrollingEnabled="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
